@@ -1,0 +1,304 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+	margin: 0;
+}
+
+/* Classes de utilidade */
+.button {
+	padding: 15px;
+	background-color: #333;
+	color: #eee;
+	border: none;
+}
+
+.box {
+	width: 80%;
+	margin: auto;
+}
+
+#container {
+	background-color: #333;
+	color: #eee;
+	width: 80%;
+
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	/* Mesma coisa que acima */
+	margin: auto;
+
+	padding-top: 60px;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 60px;
+	/* Mesma coisa que acima */
+	padding: 60px;
+
+	border-top: 15px solid red;
+	border-left: 15px solid red;
+	border-right: 15px solid red;
+	border-bottom: 15px solid red;
+	/* Mesma coisa que acima */
+	border: 15px solid rgb(0, 0, 255);
+}
+
+.main-aside h2 {
+	text-align: center;
+}
+.main-aside h2:hover {
+	color: green;
+	cursor: pointer;
+}
+
+.main-aside ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+
+.main-aside ul a {
+	text-decoration: none;
+	color: black;
+}
+
+.main-aside ul a:hover {
+	color: red;
+}
+
+.main-aside ul a:visited {
+	color: green;
+}
+
+/* Formulários */
+.main-form {
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+.main-form .form-group {
+	padding-bottom: 10px;
+}
+
+.main-form .form-group input {
+	padding: 10px;
+	width: 100%;
+}
+
+.main-form .form-group label {
+	display: block;
+}
+
+/* Positions */
+.relative {
+	position: relative;
+	border: 3px solid #333;
+	height: 500px;
+	border-radius: 7px;
+}
+
+.relative .absolute {
+	position: absolute;
+	bottom: 0;
+}
+
+.relative .absolute h1 {
+	margin: 0;
+}
+
+/* Barra de navegação */
+#main-navbar {
+	background: #333;
+	color: #eee;
+	padding: 15px;
+	text-align: center;
+	margin-bottom: 10px;
+	position: sticky;
+	top: 0;
+}
+
+/* Fixed Button */
+.fixed-button {
+	background: #333;
+	color: #eee;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 20px;
+}
+
+/* Categories */
+.categories ul {
+	list-style: none;
+}
+
+/* .categories ul li:first-child {
+	color: red;
+}
+
+.categories ul li:last-child {
+	color: green;
+}
+
+.categories ul li:nth-child(3) {
+	color: blue;
+} */
+
+.categories ul li:nth-child(even) {
+	color: red;
+}
+
+.categories ul li:nth-child(odd) {
+	color: blue;
+}
+
+/* Flexbox */
+p {
+	font-size: small;
+}
+
+.container div {
+	border: 1px solid black;
+	padding: 10px;
+	/* width: 20%; */
+
+/* ---> DISPLAY: FLEX; */
+/* ALIGN-SELF – alinha um item específico no Cross Axis */
+	/* align-self: stretch; */
+	/* align-self: flex-start; */
+	/* align-self: flex-end; */
+	/* align-self: center; */
+	/* align-self: baseline; */
+/*fim .container div*/
+}
+
+.container {
+	background-color: bisque;
+	border: 2px solid rgb(0, 85, 255);
+	/* height: 500px; */
+	height: 100vh;
+
+/* ---> DISPLAY: FLEX; (padrão) */
+	/* flex-direction: row; */
+	/* flex-flow: wrap; nao pode ter stretch, flex ou flex-basis */
+
+/* JUSTIFY-CONTENT – alinha os itens no Main Axis */
+	/* justify-content: flex-start; padrão */
+	/* justify-content: flex-end; */
+	/* justify-content: center; */
+	/* justify-content: space-between; */
+	/* justify-content: space-around; */
+
+/* ALIGN-ITENS – alinha os itens no Cross Axis */
+	/* align-items: stretch; */
+	/* align-items: flex-start; */
+	/* align-items: flex-end; */
+	/* align-items: center; */
+
+/* ALIGN-CONTENT – alinha os itens verticalmente - minimo 2 linhas*/
+	/* align-content: stretch; */
+	/* align-content: flex-start; */
+	/* align-content: flex-end; */
+	/* align-content: center; */
+	/* align-content: space-between; */
+	/* align-content: space-around; */
+	
+/* ---> DISPLAY: GRID; */
+	display: grid; 
+	/*grid-template-columns: 10% 12% 15%; tamanho/largura das colunas*/
+	grid-template-columns: repeat(4, 1fr);
+	/* grid-template-rows: repeat(7, 1fr);  */
+/* exemplo: layout blog com grid-template-areas */
+	grid-template-areas: 
+		"boxgrid-1 boxgrid-1 boxgrid-1 boxgrid-1"
+		"boxgrid-2 boxgrid-2 boxgrid-2 boxgrid-3"
+		"boxgrid-2 boxgrid-2 boxgrid-2 boxgrid-3"
+		"boxgrid-5 boxgrid-5 boxgrid-5 boxgrid-5"; 
+	grid-gap: 1px;
+	grid-auto-rows: 200px; 
+	/* grid-auto-rows: minmax(50px, auto); altura de cada linha - minima 50px e maxima auto */
+	
+	/* align-items: end; */
+	/* align-items: start; */
+	/* align-items: center; */
+	/* align-items: stretch; /* padrão, ocupa toda a altura */
+	/* align-items: baseline; */
+
+	/* justify-items: center; */
+	/* justify-items: start; */
+	/* justify-items: end; */
+	/* justify-items: stretch; /* padrão, ocupa toda a largura */
+	/* justify-items: baseline; */
+
+/*fim .container */
+}
+
+/* ---> DISPLAY: GRID; */
+.boxgrid-1 {
+	grid-area: boxgrid-1;
+	background-color: #ff6ceb;
+}
+.boxgrid-2 {
+	grid-area: boxgrid-2;
+	background-color: #ff3ce2;
+	/* align-self: center; */
+}
+.boxgrid-3 {
+	grid-area: boxgrid-3;
+	background-color: #ff00dd;
+}
+.boxgrid-5 {
+	grid-area: boxgrid-5;
+	background-color: #6d005e;
+	justify-self: end;
+}
+
+
+/* exemplo: layout blog com grid-column e grid-row */
+	/* .container .boxgrid-1 {
+		grid-column: 1 / 5; 
+		grid-row: 1 / 2;
+		background-color: #ff6ceb;
+	}
+	.container .boxgrid-2 {
+		grid-column: 1 / 4;
+		grid-row: 2 / 6; 
+		background-color: #ff3ce2;
+	}
+	.container .boxgrid-3 {
+		grid-column: 4 / 5;
+		grid-row: 2 / 6;
+		background-color: #ff00dd;
+	}
+	.container .boxgrid-5 {
+		grid-column: 1 / 5; 
+		grid-row: 6 / 7;
+		background-color: #6d005e;
+	} */
+
+/* ---> DISPLAY: FLEX; */
+.container .box-1 {
+	/* order: 2; */
+	/* flex: 1; baseado no container */
+}
+.container .box-2 {
+	/* order: 1; */
+	/* flex: 2; */
+	/* flex-basis: 50%; baseado no main axis - tipo width (row) e height (column) */
+}
+.container .box-3 {
+	/* order: 4; */
+	/* flex: 6; */
+}
+.container .box-4 {
+	/* order: 3; */
+	/* flex: 3; */
+}
