@@ -104,3 +104,15 @@ const todoJSON = JSON.stringify(todo)
 
 //JSON para lista
 const todoLista = JSON.parse(todoJSON)
+
+//LOOP
+const cars = ['Audi', 'BMW', 'Lamborghini', 'Aston Martin']
+for (let i = 0; i < cars.length; i++) {
+    console.log(`nome: ${cars[i]}`)
+}
+for (const car of cars) {
+    console.log(car) //saída: Audi, BMW, Lamborghini, Aston Martin
+}
+cars.forEach(function(car) { 
+    console.log(car) 
+})
